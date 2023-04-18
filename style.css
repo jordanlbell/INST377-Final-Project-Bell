@@ -10,7 +10,19 @@ h1 {
   font-weight: bold;
   margin: 30px 0;
   text-align: center;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #333;
 }
+
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 30px;
+
+  text-align: center;
+}
+
 
 img {
   display: block;
@@ -46,4 +58,56 @@ button {
 
 button:hover {
   background-color: #666;
+}
+
+.box {
+  background-color: rgba(232, 19, 19, 0.4);
+  border: 2px dashed;
+  border-radius: 4px;
+
+  width: fit-content;
+  height: fit-content;
+  padding: 1.5rem;
+  margin: 0 auto;
+}
+
+.left_section {
+  background-color: rgba(57, 186, 186, 0.8);
+  flex: 0 1 auto;
+  margin: 1rem;
+  padding: 1.5rem;
+}
+
+.right_section {
+  background-color: rgba(222, 166, 12, 0.7);
+  flex: 1 2 auto;
+  margin: 1rem;
+  align-items: center;
+  max-width: 450px;
+  justify-content: center;
+  display: flex;
+  flex-flow: column;
+}
+
+form input {
+ 
+  width: 100%;
+  width: -moz-available; 
+  width: -webkit-fill-available;
+  width: fill-available;
+
+  margin-bottom: 1rem;
+  height: 2rem;
+  border-radius: 4px;
+}
+
+form label {
+  width: 100%;
+  width: -moz-available; 
+  width: -webkit-fill-available; 
+  width: fill-available;
+  align-items: flex-start;
+
+  display: block; 
+  margin-bottom: 0.5rem;
 }
