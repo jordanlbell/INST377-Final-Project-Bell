@@ -89,7 +89,7 @@ async function mainEvent() { // the async keyword means we can make API requests
     loadAnimation.style.display = 'inline-block';
 
 
-    const results = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
+    const results = await fetch('https://data.princegeorgescountymd.gov/resource/wb4e-w4nf.json');
 
     const storedList = await results.json();
     localStorage.setItem('storedData', JSON.stringify(storedList));
