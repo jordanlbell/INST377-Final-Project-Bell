@@ -1,7 +1,7 @@
 
 function injectHTML(list) {
   console.log('fired injectHTML');
-  const target = document.querySelector('#restaurant_list');
+  const target = document.querySelector('#crime_list');
   target.innerHTML = '';
   list.forEach((item) => {
     const str = `<li>${item.name}</li>`;
@@ -11,13 +11,9 @@ function injectHTML(list) {
 }
 
 
-function processRestaurants(list) {
-  console.log('fired restaurants list');
-  const range = [...Array(15).keys()];
-  return newArray = range.map((item) => {
-    const index = getRandomIntInclusive(0, list.length - 1);
-    return list[index]
-  })
+function crimeByYear(list) {
+ 
+    return list
 
 
 }
@@ -66,7 +62,7 @@ async function mainEvent() { // the async keyword means we can make API requests
   const loadDataButton = document.querySelector('#data_load');
   const clearDataButton = document.querySelector('#data_clear');
   const generateListButton = document.querySelector('#generate');
-  const textField = document.querySelector('#resto')
+  const textField = document.querySelector('#street_number')
 
   const loadAnimation = document.querySelector('#data_load_animation');
   loadAnimation.style.display = 'none';
@@ -89,7 +85,7 @@ async function mainEvent() { // the async keyword means we can make API requests
     loadAnimation.style.display = 'inline-block';
 
 
-    const results = await fetch('https://data.princegeorgescountymd.gov/resource/wb4e-w4nf.json');
+    const results = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
 
     const storedList = await results.json();
     localStorage.setItem('storedData', JSON.stringify(storedList));
@@ -105,7 +101,7 @@ async function mainEvent() { // the async keyword means we can make API requests
 
   generateListButton.addEventListener('click', (event) => {
     console.log('generate new list')
-    currentList = processRestaurants(parsedData);
+    currentList = crimeByYear(parsedData);
     console.log(currentList);
     injectHTML(currentList);
     markerPlace(currentList, carto);
@@ -129,4 +125,5 @@ async function mainEvent() { // the async keyword means we can make API requests
 
 
 document.addEventListener('DOMContentLoaded', async () => mainEvent()); // the async keyword means we can make API requests
+
 
