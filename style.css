@@ -1,3 +1,19 @@
+html {
+  background-color: #ffffff;
+  font-size: 16px;
+  min-width: 300px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  /* these are specific to different browsers */
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -22,6 +38,28 @@ h2 {
 
   text-align: center;
 }
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  flex: 1;
+}
+
+.container {
+  margin: 0 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: start;
+  flex: 1;
+}
+
+.header {
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1.5rem;
+}
 
 
 img {
@@ -43,6 +81,13 @@ p {
   justify-content: center;
 }
 
+.center_button {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+
 button {
   display: block;
   margin: 0 auto;
@@ -60,8 +105,14 @@ button:hover {
   background-color: #666;
 }
 
+#map {
+  width: 400px;
+  height: 380px;
+  margin-bottom: 1rem;
+}
+
 .box {
-  background-color: rgba(232, 19, 19, 0.4);
+  background-color: rgba(104, 109, 169, 0.4);
   border: 2px dashed;
   border-radius: 4px;
 
@@ -72,14 +123,14 @@ button:hover {
 }
 
 .left_section {
-  background-color: rgba(57, 186, 186, 0.8);
+  background-color: rgba(138, 216, 21, 0.8);
   flex: 0 1 auto;
   margin: 1rem;
   padding: 1.5rem;
 }
 
 .right_section {
-  background-color: rgba(222, 166, 12, 0.7);
+  background-color: rgba(138, 216, 21, 0.8);
   flex: 1 2 auto;
   margin: 1rem;
   align-items: center;
@@ -111,3 +162,60 @@ form label {
   display: block; 
   margin-bottom: 0.5rem;
 }
+
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #fff;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
