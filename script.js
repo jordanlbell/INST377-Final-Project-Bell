@@ -1,10 +1,28 @@
 
-function filterList(list, query) {
+function injectHTML(list) {
+  console.log('fired injectHTML');
+  const target = document.querySelector('#crime_list');
+  target.innerHTML = '';
+  list.forEach((item) => {
+    const str = `<li>${item.clearance_code_inc_type}</li>`;
+    target.innerHTML += str
 
+  });
+}
+
+
+function filterList(list, query) {
+  console.log(list)
   return list.filter((item) => {
-    const lowerCaseName = item.name.toLowerCase();
-    const lowerCaseQuery = query.toLowerCase();
-    return lowerCaseName.includes(lowerCaseQuery);
+  //  console.log("street_number", item.street_number)
+  //  console.log("typeOf", typeof item.street_number)
+    if (typeof item.street_number != "undefined"){
+
+      const lowerCaseName = item.street_number.toLowerCase();
+      const lowerCaseQuery = query.toLowerCase();
+      return lowerCaseName.includes(lowerCaseQuery);
+
+    }
   })
 
 
@@ -13,7 +31,8 @@ function filterList(list, query) {
 async function mainEvent() {
   const mainForm = document.querySelector('.main_form');
   const filterButton = document.querySelector('.filter_button');
-
+  
+  
   let currentList = [];
 
 
@@ -25,7 +44,7 @@ async function mainEvent() {
 
     const results = await fetch('https://data.princegeorgescountymd.gov/resource/wb4e-w4nf.json');
 
-    const currentList = await results.json();
+    currentList = await results.json();
 
 
     console.log(currentList)
@@ -36,8 +55,9 @@ async function mainEvent() {
     const formData = new FormData(mainForm);
     const formProps = Object.fromEntries(formData);
     console.log(formProps);
-    const newList = filterList(currentList, formProps.street_number);
+    const newList = filterList(currentList, formProps.street);
     console.log(newList);
+    injectHTML(newList);
   })
 
 
