@@ -30,15 +30,11 @@
             action="https://data.princegeorgescountymd.gov/resource/wb4e-w4nf.json"
             class="box main_form"
           >
-            <button type="button" id="data_load">Load County Data</button>
-            <button type="button" id="data_clear">Clear County Data</button>
-            <div>
-              <label for="street_number">Filter By Street Number</label>
-              <input type="text" id="street_number" name="street_number" />
-            </div>
-            <div class="buttons">
-              <button type="button" id="generate">Generate list</button>
-            </div>
+            <h4>Crime Filter</h4>
+            <label for="street_number"></label>
+            <input type="text" id="street_number" name="street_number" />
+            <button type="submit">Load Data</button>
+            <button type="button" class="filter_button">Filter Data</button>
           </form>
         </div>
         <div class="right_section box">
@@ -46,14 +42,8 @@
           <div id="map" class="box"></div>
           <div class="box">
             <ol id="crime_list">
-              A List of Crimes on the Block in 2023
+              A List of Crimes on the Block in February 2017
             </ol>
-            <div class="lds-ellipsis" id="data_load_animation">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
           </div>
         </div>
         <div class="center_button">
