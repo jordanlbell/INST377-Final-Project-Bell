@@ -82,9 +82,8 @@ p {
 }
 
 .center_button {
-  position: absolute;
-  left: 50%;
-  bottom: 0;
+  text-align: center;
+
   transform: translateX(-50%);
 }
 
@@ -163,59 +162,46 @@ form label {
   margin-bottom: 0.5rem;
 }
 
-.lds-ellipsis {
-  display: inline-block;
-  position: relative;
-  width: 80px;
-  height: 80px;
-}
-.lds-ellipsis div {
-  position: absolute;
-  top: 33px;
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
-  background: #fff;
-  animation-timing-function: cubic-bezier(0, 1, 1, 0);
-}
-.lds-ellipsis div:nth-child(1) {
-  left: 8px;
-  animation: lds-ellipsis1 0.6s infinite;
-}
-.lds-ellipsis div:nth-child(2) {
-  left: 8px;
-  animation: lds-ellipsis2 0.6s infinite;
-}
-.lds-ellipsis div:nth-child(3) {
-  left: 32px;
-  animation: lds-ellipsis2 0.6s infinite;
-}
-.lds-ellipsis div:nth-child(4) {
-  left: 56px;
-  animation: lds-ellipsis3 0.6s infinite;
-}
-@keyframes lds-ellipsis1 {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-@keyframes lds-ellipsis3 {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(0);
-  }
-}
-@keyframes lds-ellipsis2 {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(24px, 0);
-  }
+.footer {
+  flex-shrink: 0;
+  padding: 1rem;
+  background-color: rgba(43, 125, 133, 0.8);
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
+.footer a {
+  color: rgb(255, 255, 255);
+  text-decoration: underline;
+}
+
+/*
+    This is an example of a 'pseudoclass'
+    In this instance, it says what to do if a mouse hovers over a link
+    This is pretty desktop-specific, since there's no hover function on touchscreens
+  */
+.footer a:hover {
+  /* Hue, saturation, luminosity, alpha */
+  background-color: hsla(0, 0%, 90%, 0.15);
+  /* red, green, blue, alpha */
+  color: rgb(115, 72, 30);
+  text-decoration: none;
+}
+
+.subtitle {
+  color: rgba(0, 0, 0, 0.8);
+  margin: 0px;
+  margin-bottom: 5px;
+}
+
+
+@media only screen and (max-width: 736px) {
+  /* Rules in here will only apply when a screen is the correct size */
+  /* check it out by using your developer tools to shrink your screen-size */
+  .container {
+    background-color: rgba(96, 90, 137, 0.65);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
