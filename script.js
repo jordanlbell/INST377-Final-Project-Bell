@@ -84,8 +84,7 @@ async function mainEvent() {
 
     storedList = await results.json();
     localStorage.setItem('storedData', JSON.stringify(storedList));
-    parsedData = storedList
-    console.log(storedData)
+    console.log(storedList)
   });
 
   filterButton.addEventListener('click', (event) => {
