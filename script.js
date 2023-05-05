@@ -63,10 +63,13 @@ function markerPlace(array, map) {
 async function mainEvent() {
   const mainForm = document.querySelector('.main_form');
   const filterButton = document.querySelector('.filter_button');
+  const clearDataButton = document.querySelector('#data_clear');
+  const loadDataButton = document.querySelector('#data_load');
   
   const carto = initMap();
 
   const storedData = localStorage.getItem('storedData');
+  let parsedData = JSON.parse(storedData);
 
   let currentList = [];
 
@@ -81,13 +84,13 @@ async function mainEvent() {
 
     storedList = await results.json();
     localStorage.setItem('storedData', JSON.stringify(storedList));
-
-    console.log(storedList)
+    parsedData = storedList
+    console.log(storedData)
   });
 
   filterButton.addEventListener('click', (event) => {
     console.log('clicked FilterButton')
-    currentList = storedList
+    currentList = parsedData
     const formData = new FormData(mainForm);
     const formProps = Object.fromEntries(formData);
     console.log(formProps);
