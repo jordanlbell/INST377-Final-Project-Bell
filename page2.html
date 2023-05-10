@@ -30,7 +30,7 @@
             action="https://data.princegeorgescountymd.gov/resource/wb4e-w4nf.json"
             class="box main_form"
           >
-            <h4>Crime Filter</h4>
+            <h4>Filter Crime by Block</h4>
             <label for="street"></label>
             <input type="text" id="street" name="street" />
             <button type="submit" id="data_load">Load Data</button>
@@ -47,6 +47,16 @@
             </ol>
         </div>
       </div>
+      <div class="box">
+        <h5>Instructions</h5>
+        <p>
+        Above is a filter for the crimes on each block. Hitting the "load data button" will load data from the Prince George's API and store it locally within the browser. 
+        After that, type in the block number of your choice (i.e "4300 block", "1200 block"). The filter is not case sensitive, and typing in just the number should function as intended, but I would reccomend adding the "block" portion regardless.
+        Once you have typed in the block you would like to filter by, hit the "Filter Data" button. This will filter the data, and plot the locations of each crime. Below the map, a list of crimes that occured on those blocks will appear.
+        Some areas in Prince Georges County have overlapping block numbers, meaning you will have to zoom the map out as both of the blocks with those numbers will be plotted, but are sometimes far apart.
+        </p>
+      </div>
+
     </div>  
     <footer class="footer">
 
