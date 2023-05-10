@@ -101,7 +101,7 @@ async function mainEvent() {
 
   clearDataButton.addEventListener("click", (event) => {
     console.log('clear browser data');
-    localStorage.clear
+    localStorage.clear();
     console.log('localStorage Check', localStorage.getItem("storedData"))
   })
 
